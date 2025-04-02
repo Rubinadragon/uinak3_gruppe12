@@ -1,4 +1,4 @@
-import { logg } from "./logg";
-import { person } from "./person";
 
-export const schemaTypes = [logg, person]
+import { logg } from "./logg";
+
+export const schemaTypes = [logg]
