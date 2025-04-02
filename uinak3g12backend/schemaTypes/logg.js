@@ -13,15 +13,20 @@ export const logg = {
                 dateFormat: "DD-MM-YYYY",
                 calenderTodayLabel: "Today"
             },
-            validation: rule => rule.required()
+            validation: rule => rule.required().error("Feltet er obligatorisk.")
         },
         {
-            name: "loggperson",
-            title: "Person",
-            description: "Persom som utførte arbeidet.",
-            type: "reference",
-            to: [{type: "person"}],
-            validation: rule => rule.required()
+            name: "loggpersoner",
+            title: "Personer",
+            description: "Person(er) som utførte arbeidet.",
+            type: "array",
+            of: [
+                {
+                    type: "reference",
+                    to: [{type: "person"}]
+                }
+            ], 
+            validation: rule => rule.required().error("Feltet er obligatorisk.")
         },
         {
             name: "loggbeskrivelse",
@@ -30,7 +35,7 @@ export const logg = {
             placeholder: "'Laget react komponent for profilkort'",
             type: "string",
             validation: [
-                rule => rule.required().max(200)
+                rule => rule.required().max(200).error("Feltet er obligatorisk.")
             ]
         },
         {
@@ -39,9 +44,24 @@ export const logg = {
             description: "Antall timer jobbet",
             type: "number",
             validation: [
-                rule => rule.required()
+                rule => rule.required().error("Feltet er obligatorisk.")
             ]
+        },
+        {
+            name: "loggtags",
+            title: "Tagg",
+            type: "tags",
+            description: "Velg en tagg som beskriver ditt arbeid, eller lage en egen.",
+            options: {
+                predefinedTags: [
+                    {label: "Sanity", value: "sanity"},
+                    {label: "React", value: "react"},
+                    {label: "SASS", value: "sass"},
+                    {label: "Arkitektur", value: "arkitektur"},
+                    {label: "Prosjektstyring", value: "prosjektstyring"},
+                    {label: "møte", value: "mote"}
+                ]
+            }
         }
     ]
-
 }
