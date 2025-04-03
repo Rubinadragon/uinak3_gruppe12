@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import ProfilKort from "./ProfilKort";
 
 export default function Home({getAllLoggData}){

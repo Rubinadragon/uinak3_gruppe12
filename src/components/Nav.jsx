@@ -1,9 +1,10 @@
+import { Link } from "react-router";
 import NavButton from "./NavButton";
 
 export default function Nav({getAllLogData}){
     return (
     <>
-        <h1>Title</h1>
+        <h1><Link to="/">Test</Link></h1>
         <ul>
         <NavButton/>
             {
