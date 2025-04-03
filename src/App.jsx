@@ -10,23 +10,23 @@ import { fetchAllLoggData } from './sanity/loggServices'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [allLogData, setAllLoggData] = useState([]);
+  const [loggData, setLoggData] = useState([]);
 
   const getAllLogData = async () => {
     const data = await fetchAllLoggData();
-    setAllLoggData(data);
+    setLoggData(data);
   };
 
   useEffect(() => {
     getAllLogData();
   }, []);
 
-  console.log(allLogData);
+  console.log(loggData);
   return (
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home loggData={loggData} />}/>
             <Route path=":profile" element={<Profil/>}/>
           </Routes>
       </Layout>
