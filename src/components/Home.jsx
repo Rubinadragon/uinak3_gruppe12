@@ -11,7 +11,7 @@ export default function Home({loggData}){
             <ProfilKort/>
             <section>
                 {loggData?.map((loggRad) => (
-                  <Log loggRad={loggRad} key={loggRad._id}/>
+                  <Log loggRad={loggRad} key={loggRad._id} loggData={loggData}/>
                 ))}
             </section>
         </>)

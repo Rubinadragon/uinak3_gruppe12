@@ -1,8 +1,9 @@
 import { useParams } from "react-router";
 import { fetchLogByPerson } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
+import Log from "./Log";
 
-export default function Profil(){
+export default function Profil({loggData}){
 
     const { profile } = useParams();
     const [singleLogg, setSingleLogg] = useState([])
@@ -39,10 +40,12 @@ export default function Profil(){
                 {/*Sett bilde her*/}
                 <p>Liste med interesser</p>
             </article>
-            <article>
+            <section>
                 <h3>Arbeidslogg</h3>
-                <p>Her kommer det en logg</p>
-            </article>
+                {loggData?.map((loggRad) => (
+                                  <Log loggRad={loggRad} key={loggRad._id}/>
+                                ))}
+            </section>
         </>
     )
 }

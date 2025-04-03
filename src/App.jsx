@@ -27,7 +27,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Home loggData={loggData} />}/>
-            <Route path="profle/:profile" element={<Profil />}/>
+            <Route path="profile/:profile" element={<Profil />}/>
           </Routes>
       </Layout>
     </>
