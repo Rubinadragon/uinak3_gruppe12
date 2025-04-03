@@ -21,13 +21,12 @@ function App() {
     getAllLogData();
   }, []);
 
-  console.log(loggData);
   return (
     <>
       <Layout>
         <Routes>
           <Route path="/" element={<Home loggData={loggData} />}/>
-            <Route path=":profile" element={<Profil/>}/>
+            <Route path=":profile" element={<Profil />}/>
           </Routes>
       </Layout>
     </>
