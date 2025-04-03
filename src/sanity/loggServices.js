@@ -4,6 +4,7 @@ import { client } from "./client";
 export async function fetchAllLoggData() {
     const data = await client.fetch(
         `*[_type == 'logg']{
+  _id,
   _createdAt,
   loggdato,
   loggpersoner[]-> {
@@ -20,6 +21,7 @@ export async function fetchAllLoggData() {
 export async function fetchLogByPerson(personSlug) {
     const data = await client.fetch(
         `*[_type == "logg" && $personSlug in loggpersoner[]-> personslug.current]{
+    _id,
     _createdAt,
   loggdato,
   loggpersoner[]-> {
