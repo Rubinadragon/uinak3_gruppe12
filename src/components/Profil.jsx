@@ -1,4 +1,4 @@
-export default function Profil(){
+export default function Profil({setAllLoggData}){
     return(
         <>
             <article>

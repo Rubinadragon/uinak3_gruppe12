@@ -24,10 +24,10 @@ function App() {
   console.log(allLogData);
   return (
     <>
-      <Layout>
+      <Layout >
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path=":profile" element={<Profil/>}/>
+          <Route path="/" element={<Home setAllLoggData={setAllLoggData}/>}/>
+          <Route path="profile/:profile" element={<Profil setAllLoggData={setAllLoggData}/>}/>
         </Routes>
       </Layout>
     </>

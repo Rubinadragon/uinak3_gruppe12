@@ -1,3 +1,9 @@
+import NavButton from "./NavButton";
+
 export default function Nav(){
-    return <h1>Dette er Nav</h1>
+    return (
+    <>
+        <h1>Title</h1>
+        <NavButton/>
+    </>)
 }
