@@ -6,8 +6,6 @@ import Layout from './components/Layout'
 import { Route, Routes } from 'react-router'
 import Home from './components/Home'
 import Profil from './components/Profil'
-
-function App() {
 import { fetchAllLoggData } from './sanity/loggServices'
 
 function App() {
