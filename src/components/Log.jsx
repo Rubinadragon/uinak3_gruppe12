@@ -1,3 +1,5 @@
+import "../assets/styles/log.scss";
+
 export default function Log({loggRad}){
     return(
         <article>
