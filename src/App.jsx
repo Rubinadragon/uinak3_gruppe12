@@ -15,8 +15,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
-            <Route path=":profile" element={<Profil/>}/>
-          </Routes>
+          <Route path=":profile" element={<Profil/>}/>
+        </Routes>
       </Layout>
     </>
   )
