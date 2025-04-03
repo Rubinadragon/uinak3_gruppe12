@@ -1,6 +1,6 @@
 import ProfilKort from "./ProfilKort";
 
-export default function Home({setAllLoggData}){
+export default function Home({getAllLoggData}){
     return (<>
             <h2>
                 Overskrift
