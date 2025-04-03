@@ -25,17 +25,17 @@ export const person = {
         title: 'Navn',
         type: 'string',
       },
-      // {
-      //   name: 'logg',
-      //   title: 'Logg',
-      //   type: 'array',
-      //   of: [
-      //     {
-      //       type: 'reference',
-      //       to: [{ type: 'logg' }],
-      //     },
-      //   ],
-      // },
+       {
+         name: 'logg',
+         title: 'Logg',
+         type: 'array',
+         of: [
+           {
+             type: 'reference',
+             to: [{ type: 'logg' }],
+           },
+         ],
+       },
       {
         name: 'epost',
         title: 'E-post',
