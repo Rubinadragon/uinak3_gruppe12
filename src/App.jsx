@@ -23,10 +23,11 @@ function App() {
 
   return (
     <>
-      <Layout>
+      <Layout >
         <Routes>
+
           <Route path="/" element={<Home loggData={loggData} />}/>
-            <Route path=":profile" element={<Profil />}/>
+            <Route path="profle/:profile" element={<Profil />}/>
           </Routes>
       </Layout>
     </>
