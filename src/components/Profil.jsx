@@ -2,49 +2,48 @@ import { useParams } from "react-router";
 import { fetchLogByPerson } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
 import Log from "./Log";
+import { personal } from "../sanity/testPersoner";
 
-export default function Profil({loggData}){
+export default function Profil(){
 
     const { profile } = useParams();
+
     const [singleLogg, setSingleLogg] = useState([])
+    const [personInfo, setPersonInfo] = useState([])
 
     const getPersonBySlug = async (profile) => {
         const data = await fetchLogByPerson(profile);
         setSingleLogg(data);
+        setPersonInfo(personal[0])
     }
 
     useEffect(() => {
         getPersonBySlug(profile)
     }, [profile])
 
+    console.log(personInfo)
     return(
         <>
-        {
-            singleLogg?.map((loggRad) => (
-                <article key={loggRad._id}>
-                    <span>{loggRad.loggdato}</span>
+            <section>
+                <img src={personInfo?.profilbilde} alt=""/>
+                <article>
+                    <h1>{personInfo?.personnavn}</h1>
+                    <p>{personInfo?.bio}</p>
+                    <h2>Interesser</h2>
+                    <ul>
                     {
-                        loggRad.loggpersoner.map((loggPerson, index) => (
-                            <span key={`person_${index}`}>{loggPerson.personnavn}
-                            {loggRad.loggpersoner.length > index + 1 ? ", " : ""}</span>
+                        personInfo.interesser?.map((interesse, index) => (
+                            <li key={`interesse_${index}`}>{interesse}</li>
                         ))
                     }
-                    <span>{loggRad.loggbeskrivelse}</span>
-                    <span>{loggRad.loggtimer}</span>
+                    </ul>
                 </article>
-            ))
-        }
-            <article>
-                <h3>Navn</h3>
-                <p>Beskrivelse</p>
-                {/*Sett bilde her*/}
-                <p>Liste med interesser</p>
-            </article>
+            </section>
             <section>
-                <h3>Arbeidslogg</h3>
-                {loggData?.map((loggRad) => (
-                                  <Log loggRad={loggRad} key={loggRad._id}/>
-                                ))}
+                <h2>Arbeidslogg</h2>
+                {
+                    singleLogg?.map((loggRad) => (<Log loggRad={loggRad} key={loggRad._id}/>))
+                }
             </section>
         </>
     )
