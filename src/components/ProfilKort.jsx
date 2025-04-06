@@ -1,9 +1,12 @@
-export default function ProfilKort(){
+export default function ProfilKort({person}){
     return(
         <article>
-            <p>Navn</p>
-            <p>E-post</p>
-            {/*Sett bilde her*/}
+            <p>{person.personnavn}</p>
+            <a href={`mailto:${person.epost}`}>{person.epost}</a>
+            <img
+                src={person.profilbilde?.asset?.url}
+                alt={person.profilbilde?.alt || "Profilbilde"}
+            />
         </article>
-    )
+    );
 }

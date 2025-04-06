@@ -1,23 +1,43 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { fetchLogByPerson } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
+import { fetchPerson } from "../sanity/personServices";
 
 export default function Profil(){
 
-    const { profile } = useParams();
-    const [singleLogg, setSingleLogg] = useState([])
+    const { profile } = useParams();    
+    const [singleLogg, setSingleLogg] = useState([]);
+    const [person, setPerson] = useState(null);
+    
+
 
     const getPersonBySlug = async (profile) => {
+        const personData = await fetchPerson(profile);
         const data = await fetchLogByPerson(profile);
+        setPerson(personData);
         setSingleLogg(data);
-    }
+      };
 
     useEffect(() => {
         getPersonBySlug(profile)
-    }, [profile])
+    }, [profile]);
 
     return(
         <>
+        {
+            person && (
+                <article>
+                    <img src={person.profilbilde?.asset?.url} alt={person.profilbilde?.alt} />
+                    <h3>{person.personnavn}</h3>
+                    <p>{person.bio}</p>
+                    <p>Interesser:</p>
+                    <ul>
+                        {person.interesser?.map((item, i) => <li key={i}>{item}</li>)}
+                    </ul>
+                </article>
+            )
+        }
+
         {
             singleLogg?.map((loggRad) => (
                 <article key={loggRad._id}>
@@ -33,16 +53,6 @@ export default function Profil(){
                 </article>
             ))
         }
-            <article>
-                <h3>Navn</h3>
-                <p>Beskrivelse</p>
-                {/*Sett bilde her*/}
-                <p>Liste med interesser</p>
-            </article>
-            <article>
-                <h3>Arbeidslogg</h3>
-                <p>Her kommer det en logg</p>
-            </article>
         </>
-    )
+    );
 }
