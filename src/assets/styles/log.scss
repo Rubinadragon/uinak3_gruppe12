@@ -1,5 +1,25 @@
 section{
     article{
-        background-color: blue;
+        display:flex;
+        justify-content: space-evenly;
+        margin: 0.5rem;
+        background-color: grey;
+
+        span{
+            padding: 0 0.5rem;
+            text-align: left;
+        }
+        #loggdato{
+            min-width: 100px;
+        }
+        #loggperson{
+            min-width:150px;
+        }
+        #loggbeskrivelse{
+            min-width: 400px;
+        }
+        #loggtid{
+            min-width: 100px;
+        }
     }
 }
