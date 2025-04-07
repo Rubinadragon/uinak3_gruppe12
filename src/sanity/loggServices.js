@@ -36,7 +36,7 @@ export async function fetchLogByPerson(personSlug) {
 
 export async function fetchAllPeople(){//Muligens midlertidig? Brukes til for øyeblikket til å hente navn og slug til nav.
   const data = await client.fetch(
-    `*[_type == "person"]{_id, personslug, personnavn, profilbilde, epost}`
+    `*[_type == "person"]{_id, personnavn, profilbilde, epost, personslug}`
   )
   return data
 }

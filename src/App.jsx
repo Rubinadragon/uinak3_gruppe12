@@ -23,7 +23,7 @@ function App() {
     setPeopleData(data)
   }
 
-  //console.log(getAllPeople)
+  console.log()
   useEffect(() => {
     getAllLogData();
   }, []);
