@@ -9,7 +9,7 @@ export default function Nav({peopleData}){
             {
                 peopleData?.map((button) => (
                     <li>
-                        <Link to={`profile/:${button.personslug}`}>{button.personnavn}</Link>
+                        <Link to={`profile/${button.personslug}`}>{button.personnavn}</Link>
                     </li>))
             }
         </ul>
