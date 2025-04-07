@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import NavButton from "./NavButton";
 
 export default function Nav({peopleData}){
     //console.log(peopleData)
@@ -9,14 +8,9 @@ export default function Nav({peopleData}){
         <ul>
             {
                 peopleData?.map((button) => (
-                <NavButton key={button._id} 
-                peopleData={button}
-                />))
-                /*getAllLogData?.map((button) =>
-                    <li key={button._id}>
-                        <NavButton button={button}/>
-                    </li>
-                )*/
+                    <li>
+                        <Link to={`profile/:${button.personslug}`}>{button.personnavn}</Link>
+                    </li>))
             }
         </ul>
     </>)
