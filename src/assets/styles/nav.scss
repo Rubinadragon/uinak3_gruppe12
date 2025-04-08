@@ -9,7 +9,16 @@ header{
     width: 100%;
     a{
         color: global.$dark-blue;//$blue-green//;
+        font-weight: global.$Bold;
     }  
+    h1{
+        a{
+            font-weight: global.$Black;
+        }
+    }
+    a:hover{
+        color: global.$sand;
+    }
 }
 
 
