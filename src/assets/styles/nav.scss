@@ -8,13 +8,15 @@ header{
     justify-content: space-between;
     width: 100%;
     a{
-
-        color: global.$dark-blue;//$blue-green//;
+        
         font-weight: global.$Bold;
     }  
     h1{
         padding: 0 1rem;
-        a{
+        display: flex;
+        align-items: center;
+        a{  
+            color: global.$dark-blue;
             font-weight: global.$Black;
             padding: inherit;
         }
@@ -23,11 +25,16 @@ header{
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    gap: 1rem;
     li{
-        text-decoration: none;
+        list-style: none;
         padding: 1rem;
-        a{
+
+        a{  
+            color: global.$sand;
+            background-color: global.$dark-blue;
             padding: inherit;
+            border-radius: 0.5rem;
         }
     }
 }
@@ -54,12 +61,17 @@ header{
 //PC
 @media only screen and (min-width: 601px){ 
     header{
-        li:hover{
-            background-color: global.$blue-green;
+        li{
+            a:hover{
+                background-color: global.$blue-green;
+            }
         }
         ul{
             flex-direction: row;
             align-items: center;
+        }
+        a:hover{
+            color: global.$dark-blue;
         }
     }
 }
