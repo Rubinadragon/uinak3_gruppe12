@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ProfilKort from "./ProfilKort";
 import Log from "./Log";
+import "../assets/styles/profilkort.scss";
 
 
 export default function Home({logs, persons}){
