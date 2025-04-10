@@ -1,0 +1,23 @@
+@use "global";
+
+body{
+    font-family: global.$Jost;
+    background-color: global.$white;
+}
+
+#root{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    color: global.$dark-blue;
+}
+
+//Mobil
+@media only screen and (max-width: 600px){
+
+}
+
+
+//PC
