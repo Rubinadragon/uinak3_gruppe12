@@ -11,7 +11,6 @@ export default function Profil(){
     const { profile } = useParams();    
     const [singleLogg, setSingleLogg] = useState([]);
     const [person, setPerson] = useState(null);
-    
 
 
     const getPersonBySlug = async (profile) => {
@@ -27,21 +26,21 @@ export default function Profil(){
 
     return(
         <>
-        <section>
         {
             person && (
-                <article>
-                    <img src={person.profilbilde?.asset?.url} alt={person.profilbilde?.alt} />
-                    <h3>{person.personnavn}</h3>
-                    <p>{person.bio}</p>
-                    <p>Interesser:</p>
-                    <ul>
-                        {person.interesser?.map((item, i) => <li key={i}>{item}</li>)}
-                    </ul>
-                </article>
+                <section id="profileSection">
+                    <img src={person.profilbilde.asset.url} alt={person.profilbilde.alt} />
+                    <article>
+                        <h1>{person.personnavn}</h1>
+                        <p>{person.bio}</p>
+                        <p>Interesser:</p>
+                        <ul>
+                            {person.interesser?.map((item, i) => <li key={i}>{item}</li>)}
+                        </ul>
+                    </article>
+                </section>
             )
         }
-        </section>
         <section>
         {
             singleLogg?.map((loggRad) => (
