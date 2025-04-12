@@ -1,7 +1,10 @@
+import "../assets/styles/profile.scss"
+
 import { useParams } from "react-router-dom";
 import { fetchLogByPersonSlug } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
 import { fetchPerson } from "../sanity/personServices";
+import Log from "./Log";
 
 export default function Profil(){
 
@@ -24,6 +27,7 @@ export default function Profil(){
 
     return(
         <>
+        <section>
         {
             person && (
                 <article>
@@ -37,22 +41,14 @@ export default function Profil(){
                 </article>
             )
         }
-
+        </section>
+        <section>
         {
             singleLogg?.map((loggRad) => (
-                <article key={loggRad._id}>
-                    <span>{loggRad.loggdato}</span>
-                    {
-                        loggRad.loggpersoner.map((loggPerson, index) => (
-                            <span key={`person_${index}`}>{loggPerson.personnavn}
-                            {loggRad.loggpersoner.length > index + 1 ? ", " : ""}</span>
-                        ))
-                    }
-                    <span>{loggRad.loggbeskrivelse}</span>
-                    <span>{loggRad.loggtimer}</span>
-                </article>
+                <Log loggRad={loggRad} key={loggRad._id} loggData={singleLogg}/>
             ))
         }
+        </section>
         </>
     );
 }

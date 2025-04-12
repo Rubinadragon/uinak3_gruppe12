@@ -1,22 +1,21 @@
 @use "global";
 
 header{
-    display: flex;
-    padding: 0 1rem;
     background-color: global.$green-ish;//$dark-green-blue;
-    //$dark-blue;
-    justify-content: space-between;
-    width: 100%;
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     a{
-        
         font-weight: global.$Bold;
     }  
     h1{
-        padding: 0 1rem;
-        display: flex;
-        align-items: center;
         a{  
             color: global.$dark-blue;
+            text-decoration: none;
             font-weight: global.$Black;
             padding: inherit;
         }
