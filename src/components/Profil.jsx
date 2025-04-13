@@ -8,7 +8,6 @@ import Log from "./Log";
 export default function Profil(){
 
     const { profile } = useParams();    
-    //const [hoursWorked, setHoursWorked] = useState(0);
     const [person, setPerson] = useState(null);
 
     const getPersonBySlug = async (profile) => {
@@ -20,15 +19,12 @@ export default function Profil(){
         getPersonBySlug(profile)
     }, [profile]);
 
-    /*const updateHoursWorked = (value) => {
-        const tempHour = hoursWorked;
-        setHoursWorked(tempHour + value)
-    }*/
+    let hoursWorked = 0;
 
     return(
         <>
         {
-            person && (
+            person ? (
                 <section id="profileSection">
                     <img src={person.profilbilde.asset.url} alt={person.profilbilde.alt} />
                     <article>
@@ -41,14 +37,23 @@ export default function Profil(){
                     </article>
                 </section>
             )
+            :
+            <section id="profileSection">
+                <h1>Ingen person funnet med navn: {profile}.</h1>
+            </section>
         }
         <section className="logSection">
         {
-            person?.personlogg.map((loggRad) => (
-                <Log loggRad={loggRad} key={loggRad._id} loggData={person.personlogg}/>
-            ))
+            person?.personlogg.map((loggRad) => {
+                hoursWorked += loggRad.loggtimer;
+                return <Log loggRad={loggRad} key={loggRad._id} loggData={person.personlogg}/>
+                }
+            )
         }
-        <p>{/*hoursWorked */}</p>
+        {
+            person ? <p>Timer totalt: {hoursWorked}</p> : ""
+        }
+        
         </section>
         </>
     );
