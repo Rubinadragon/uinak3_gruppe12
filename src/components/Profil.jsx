@@ -1,7 +1,6 @@
 import "../assets/styles/profile.scss"
 
 import { useParams } from "react-router-dom";
-import { fetchLogByPersonSlug } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
 import { fetchPerson } from "../sanity/personServices";
 import Log from "./Log";
@@ -9,20 +8,22 @@ import Log from "./Log";
 export default function Profil(){
 
     const { profile } = useParams();    
-    const [singleLogg, setSingleLogg] = useState([]);
+    //const [hoursWorked, setHoursWorked] = useState(0);
     const [person, setPerson] = useState(null);
-
 
     const getPersonBySlug = async (profile) => {
         const personData = await fetchPerson(profile);
-        const data = await fetchLogByPersonSlug(profile);
         setPerson(personData);
-        setSingleLogg(data);
       };
 
     useEffect(() => {
         getPersonBySlug(profile)
     }, [profile]);
+
+    /*const updateHoursWorked = (value) => {
+        const tempHour = hoursWorked;
+        setHoursWorked(tempHour + value)
+    }*/
 
     return(
         <>
@@ -43,10 +44,11 @@ export default function Profil(){
         }
         <section className="logSection">
         {
-            singleLogg?.map((loggRad) => (
-                <Log loggRad={loggRad} key={loggRad._id} loggData={singleLogg}/>
+            person?.personlogg.map((loggRad) => (
+                <Log loggRad={loggRad} key={loggRad._id} loggData={person.personlogg}/>
             ))
         }
+        <p>{/*hoursWorked */}</p>
         </section>
         </>
     );
