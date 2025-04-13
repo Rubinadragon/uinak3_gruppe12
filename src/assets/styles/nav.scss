@@ -4,8 +4,11 @@ header{
     background-color: global.$green-ish;//$dark-green-blue;
 
     section {
-        justify-content: space-between;
-        align-items: center;
+        @include global.content-width(2rem, 2rem, 1380px);
+        @include global.flex-display(row, nowrap, space-between, center);
+
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     a{

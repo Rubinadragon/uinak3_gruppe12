@@ -5,6 +5,7 @@ $Jost: "Jost", sans-serif;
 $Regular: 400;
 $Bold: 700; 
 $Black: 900;
+$text-m: 1.2rem;
 
 /*Farger*/
 $sand: #F4E9CD;
@@ -14,7 +15,25 @@ $dark-green-blue: #468189;
 $dark-blue: #031926;
 $white: #f3f0e8;
 
-// Global sizes
+// Global sizing
 $page-width: 1380px;
-$padding-right: 2rem;
-$padding-left: 2rem;
+$pad-left: 2rem;
+$pad-right: 2rem;
+$pad-top: 3rem;
+$pad-bottom: 3rem;
+
+// Mixins
+@mixin flex-display($direction, $wrap: wrap, $primary-axis: flex-start, $secondary-axis: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $primary-axis;
+    align-items: $secondary-axis;
+    gap: $gap;
+}
+
+@mixin content-width ($left: $pad-left, $right: $pad-right, $max-width: $page-width) {
+    padding-left: $left;
+    padding-right: $right;
+    max-width: $max-width;
+}

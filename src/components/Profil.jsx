@@ -33,15 +33,15 @@ export default function Profil(){
                     <article>
                         <h1>{person.personnavn}</h1>
                         <p>{person.bio}</p>
-                        <p>Interesser:</p>
-                        <ul>
+                        <h2>Interesser:</h2>
+                        <ul className="interestList">
                             {person.interesser?.map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </article>
                 </section>
             )
         }
-        <section>
+        <section className="logSection">
         {
             singleLogg?.map((loggRad) => (
                 <Log loggRad={loggRad} key={loggRad._id} loggData={singleLogg}/>

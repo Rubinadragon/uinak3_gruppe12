@@ -1,7 +1,14 @@
 @use "global";
 
-html, body {
-    padding: 0;
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -15,10 +22,11 @@ h1, h2, p {
     color: global.$dark-blue;
 }
 
+p {
+    line-height: 1.5;
+    font-size: global.$text-m;
+}
+
 section {
-    max-width: global.$page-width;
-    padding-left: global.$padding-left;
-    padding-right: global.$padding-right;
     margin: 0 auto;
-    display: flex;
 }
