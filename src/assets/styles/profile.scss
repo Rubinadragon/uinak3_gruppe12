@@ -1,0 +1,43 @@
+@use 'global';
+
+#profileSection {
+    @include global.content-width();
+    @include global.flex-display(row, wrap, flex-start, flex-start, 2rem);
+
+    padding-top: global.$pad-top;
+    padding-bottom: global.$pad-bottom;
+    align-items: stretch;
+
+    img {
+        flex-grow: 1;
+        flex-basis: 40%;
+        max-width: 100%;
+        max-height: 600px;
+        object-fit: cover;
+        border: 15px solid global.$green-ish;
+        border-radius: 1.6rem;
+        object-position: top center;  
+    }
+
+    article {
+        @include global.flex-display(column, wrap, flex-start, flex-start);
+        flex-grow: 1;
+        flex-basis: 50%;
+        column-gap: 2rem!important;
+        
+        p {
+            padding: 1rem 0;
+        }
+    }
+}
+
+.interestList {
+    color: global.$dark-blue;
+    font-size: global.$text-m;
+    margin-left: 15px;
+}
+
+.logSection {
+    @include global.content-width(2rem, 2rem, 1380px);
+    @include global.flex-display(column);
+}

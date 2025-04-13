@@ -2,7 +2,7 @@ import "../assets/styles/log.scss";
 
 export default function Log({loggRad}){
     return(
-        <article>
+        <article id="logRow">
         <span id="loggdato">{loggRad.loggdato}</span>
         {
             loggRad.loggpersoner.map((loggPerson, index) => (
