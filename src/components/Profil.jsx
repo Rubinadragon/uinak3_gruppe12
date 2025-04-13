@@ -1,7 +1,6 @@
 import "../assets/styles/profile.scss"
 
 import { useParams } from "react-router-dom";
-import { fetchLogByPersonSlug } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
 import { fetchPerson } from "../sanity/personServices";
 import Log from "./Log";
@@ -9,25 +8,23 @@ import Log from "./Log";
 export default function Profil(){
 
     const { profile } = useParams();    
-    const [singleLogg, setSingleLogg] = useState([]);
     const [person, setPerson] = useState(null);
-
 
     const getPersonBySlug = async (profile) => {
         const personData = await fetchPerson(profile);
-        const data = await fetchLogByPersonSlug(profile);
         setPerson(personData);
-        setSingleLogg(data);
       };
 
     useEffect(() => {
         getPersonBySlug(profile)
     }, [profile]);
 
+    let hoursWorked = 0;
+
     return(
         <>
         {
-            person && (
+            person ? (
                 <section id="profileSection">
                     <img src={person.profilbilde.asset.url} alt={person.profilbilde.alt} />
                     <article>
@@ -40,13 +37,23 @@ export default function Profil(){
                     </article>
                 </section>
             )
+            :
+            <section id="profileSection">
+                <h1>Ingen person funnet med navn: {profile}.</h1>
+            </section>
         }
         <section className="logSection">
         {
-            singleLogg?.map((loggRad) => (
-                <Log loggRad={loggRad} key={loggRad._id} loggData={singleLogg}/>
-            ))
+            person?.personlogg.map((loggRad) => {
+                hoursWorked += loggRad.loggtimer;
+                return <Log loggRad={loggRad} key={loggRad._id} loggData={person.personlogg}/>
+                }
+            )
         }
+        {
+            person ? <p>Timer totalt: {hoursWorked}</p> : ""
+        }
+        
         </section>
         </>
     );

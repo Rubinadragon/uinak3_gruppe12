@@ -6,7 +6,6 @@
 
     padding-top: global.$pad-top;
     padding-bottom: global.$pad-bottom;
-    align-items: stretch;
 
     img {
         flex-grow: 1;
@@ -40,4 +39,6 @@
 .logSection {
     @include global.content-width(2rem, 2rem, 1380px);
     @include global.flex-display(column);
+
+    padding-bottom: global.$pad-bottom;
 }
