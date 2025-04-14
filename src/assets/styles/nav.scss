@@ -18,13 +18,11 @@ header{
         font-size: 3rem;
         padding: 0 1rem;
         display: flex;
-        align-items: center;
-        a{  
-            color: global.$dark-blue;
-            text-decoration: none;
-            font-weight: global.$Black;
-            padding: inherit;
-        }
+        align-items: center; 
+        color: global.$dark-blue;
+        text-decoration: none;
+        font-weight: global.$Black;
+        padding: inherit;
     }
     ul{
     display: flex;
