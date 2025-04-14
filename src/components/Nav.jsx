@@ -5,7 +5,7 @@ export default function Nav({persons}){
     console.log(persons)
     return (
     <>
-        <h1><Link to="/">Gruppe 12</Link></h1>
+        <Link to="/" className="logo">Gruppe 12</Link>
         <ul>
             {
                 persons?.map((person) => (
