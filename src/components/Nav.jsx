@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../assets/styles/nav.scss"
 
 export default function Nav({persons}){
@@ -12,7 +12,7 @@ export default function Nav({persons}){
                         {
                             persons?.map((person) => (
                                 <li key={person._id}>
-                                    <Link to={`profile/${person.personslug}`}>{person.personnavn}</Link>
+                                    <NavLink to={`profile/${person.personslug}`}>{person.personnavn.split(" ")[0]}</NavLink>
                                 </li>))
                         }
                     </ul>
