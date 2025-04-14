@@ -6,7 +6,7 @@ export default function Nav({persons}){
     return (
         <header>
             <section>
-                <h1><Link to="/">Gruppe 12</Link></h1>
+                <Link to="/" className="logo">Gruppe 12</Link>
                 <nav>
                     <ul>
                         {
