@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./assets/styles/styles.scss"
 import Layout from './components/Layout'
 import { Route, Routes } from "react-router-dom"
 import Home from './components/Home'
@@ -10,7 +8,6 @@ import { fetchAllLogs } from './sanity/loggServices'
 import { fetchAllPersons } from './sanity/personServices'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [logs, setLoggs] = useState([]);
   const [persons, setPersons] = useState([]);
 

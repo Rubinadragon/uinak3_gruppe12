@@ -2,7 +2,7 @@ import "../assets/styles/log.scss";
 
 export default function Log({loggRad}){
     return(
-        <article>
+        <article id="logRow">
         <span id="loggdato">{loggRad.loggdato}</span>
         {
             loggRad.loggpersoner.map((loggPerson, index) => (
@@ -11,7 +11,7 @@ export default function Log({loggRad}){
             ))
         }
         <span id="loggbeskrivelse">{loggRad.loggbeskrivelse}</span>
-        <span id="loggtid">{loggRad.loggtimer}</span>
+        <span id="loggtid">{`${loggRad.loggtimer} ${loggRad.loggtimer >= 2 ? " timer" : "time"}` }</span>
     </article>
 )
     
