@@ -5,7 +5,7 @@ header{
 
     section {
         @include global.content-width(2rem, 2rem, 1380px);
-        @include global.flex-display(row, nowrap, space-between, center);
+        //@include global.flex-display(row, nowrap, space-between, center);
 
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -45,25 +45,33 @@ header{
 
 
 //Mobil
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 650px){
     header{
         text-align: left;
         flex-direction: column;
         align-items: center;
         padding: 0;
-       
+        section{
+            @include global.flex-display(row, wrap, space-between, center);
+        }
+        nav{
+            min-width: 100%;
+        }
         ul{
-        text-align: left;
-        flex-direction: column;
-        align-items: flex-start;
+            min-width: inherit;
+            text-align: left;
+            flex-direction: row;
         }
     }
 }
 
 
 //PC
-@media only screen and (min-width: 601px){ 
+@media only screen and (min-width: 651px){ 
     header{
+        section{
+            @include global.flex-display(row, nowrap, space-between, center);
+        }
         li{
             a:hover{
                 background-color: global.$blue-green;
