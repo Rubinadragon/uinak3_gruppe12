@@ -1,21 +1,16 @@
-@import "global.scss";
+@use "global";
 
 
 .profilkort{
-    display:flex;
-    flex-wrap:wrap;
-
+    flex-grow: 1;
+    flex-basis: 23%;
 }
-article{
-    background-color: $sand;
-    width: 250px;
-    height: 350px;
-    color: $dark-blue;
-    margin: 0.5rem;
+.profilkort article {
+    @include global.flex-display(column-reverse);
+
+    background-color: global.$sand;
+    color: global.$dark-blue;
     padding: 1rem;
-    display:flex;
-    flex-direction: column-reverse;
-    text-align: left;
 
     a{
         margin:0;
@@ -23,12 +18,25 @@ article{
 
     p{
         margin:0.5rem 0 0 0;
+        text-decoration: none;
     }
 
 
     img{
-        width: 250px;
+        width: 100%;
         height: 300px;
         object-fit: cover;
+    }
+
+    transition: .25s;
+    &:hover {
+        transform: translateY(-5px);
+        background-color: global.$green-ish; 
+    }
+}
+
+@media only screen and (max-width: 980px){
+    .profilkort{
+        flex-basis: 45%;
     }
 }

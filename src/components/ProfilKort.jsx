@@ -3,9 +3,9 @@ import "../assets/styles/profilkort.scss";
 
 export default function ProfilKort({person}){
     return(
-        <Link to={`profile/${person.personslug}`}> 
+        <Link to={`profile/${person.personslug}`} className="profilkort"> 
         <article>
-            <a href={`mailto:${person.epost}`}>{person.epost}</a>
+            <p>{person.epost}</p>
             <p>{person.personnavn}</p>
             <img
                 src={person.profilbilde?.asset?.url}

@@ -42,7 +42,8 @@ export default function Profil(){
                 <h1>Ingen person funnet med navn: {profile}.</h1>
             </section>
         }
-        <section className="logSection">
+        <section id="logSection">
+            <h2>Arbeidslogg</h2>
         {
             person?.personlogg.map((loggRad) => {
                 hoursWorked += loggRad.loggtimer;

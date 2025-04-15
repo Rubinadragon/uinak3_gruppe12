@@ -1,25 +1,20 @@
 import { Link } from "react-router-dom";
 import ProfilKort from "./ProfilKort";
 import Log from "./Log";
-import "../assets/styles/profilkort.scss";
 
 
 export default function Home({logs, persons}){
     return (
             <>            
-            <h2>
-                Gruppemedlemmer
-            </h2>
-            <div className="profilkort">
+            <section className="profiler">
+                <h2>Gruppemedlemmer</h2>
                 {persons?.map((person) => (
                 <ProfilKort key={person._id} person={person} />
                 ))}
-            </div>
+            </section>
 
-            <h2>
-                Arbeidslogg
-            </h2>
             <section>
+                <h2>Arbeidslogg</h2>
                 {logs?.map((loggRad) => (
                   <Log loggRad={loggRad} key={loggRad._id} loggData={logs}/>
                 ))}
