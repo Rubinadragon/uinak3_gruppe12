@@ -1,7 +1,6 @@
 @use 'global';
 
 #profileSection {
-    @include global.content-width();
     @include global.flex-display(row, wrap, flex-start, flex-start, 2rem);
 
     padding-top: global.$pad-top;

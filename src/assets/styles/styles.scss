@@ -29,4 +29,5 @@ p {
 
 section {
     margin: 0 auto;
+    @include global.content-width();
 }
