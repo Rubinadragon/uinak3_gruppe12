@@ -4,7 +4,6 @@
     @include global.flex-display(row, wrap, flex-start, flex-start, 2rem);
 
     padding-top: global.$pad-top;
-    padding-bottom: global.$pad-bottom;
 
     img {
         flex-grow: 1;
@@ -36,9 +35,8 @@
     margin-left: 15px;
 }
 
-.logSection {
-    @include global.content-width(2rem, 2rem, 1380px);
-    @include global.flex-display(column);
+#logSection {
+    @include global.content-width();
 
     padding-bottom: global.$pad-bottom;
 }
