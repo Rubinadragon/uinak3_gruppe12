@@ -1,7 +1,7 @@
 import { client } from "./client";
 
 
-export async function fetchAllLoggData() {
+export async function fetchAllLogs() {
     const data = await client.fetch(
         `*[_type == 'logg']{
   _id,
@@ -18,7 +18,7 @@ export async function fetchAllLoggData() {
     return data;
 }
 
-export async function fetchLogByPerson(personSlug) {
+export async function fetchLogByPersonSlug(personSlug) {
     const data = await client.fetch(
         `*[_type == "logg" && $personSlug in loggpersoner[]-> personslug.current]{
     _id,

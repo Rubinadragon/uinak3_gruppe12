@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
-import NavButton from "./NavButton";
 
-export default function Nav({getAllLogData}){
+export default function Nav({persons}){
+    console.log(persons)
     return (
     <>
         <h1><Link to="/">Test</Link></h1>
         <ul>
-        <NavButton/>
             {
-                
-                /*getAllLogData?.map((button) =>
-                    <li key={button._id}>
-                        <NavButton button={button}/>
-                    </li>
-                )*/
+                persons?.map((person) => (
+                    <li key={person._id}>
+                        <Link to={`profile/${person.personslug}`}>{person.personnavn}</Link>
+                    </li>))
             }
         </ul>
     </>)

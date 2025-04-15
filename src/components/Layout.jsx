@@ -1,10 +1,10 @@
 import Nav from "./Nav";
 
-export default function Layout({children}){
+export default function Layout({children, persons}){
     return(
         <>
             <header>
-                <Nav/>
+                <Nav persons={persons}/>
             </header>
             <main>
                 {children}

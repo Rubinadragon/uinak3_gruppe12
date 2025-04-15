@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { fetchLogByPerson } from "../sanity/loggServices";
+import { fetchLogByPersonSlug } from "../sanity/loggServices";
 import { useEffect, useState } from "react";
 import { fetchPerson } from "../sanity/personServices";
 
@@ -13,7 +13,7 @@ export default function Profil(){
 
     const getPersonBySlug = async (profile) => {
         const personData = await fetchPerson(profile);
-        const data = await fetchLogByPerson(profile);
+        const data = await fetchLogByPersonSlug(profile);
         setPerson(personData);
         setSingleLogg(data);
       };

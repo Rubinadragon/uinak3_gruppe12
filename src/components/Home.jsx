@@ -3,14 +3,14 @@ import ProfilKort from "./ProfilKort";
 import Log from "./Log";
 import "../Logg.scss";
 
-export default function Home({loggData, personer}){
+export default function Home({logs, persons}){
     return (
             <>            
             <h2>
                 Gruppemedlemmer
             </h2>
             <div className="profilkort">
-                {personer?.map((person) => (
+                {persons?.map((person) => (
                 <ProfilKort key={person._id} person={person} />
                 ))}
             </div>
@@ -19,11 +19,11 @@ export default function Home({loggData, personer}){
                 Arbeidslogg
             </h2>
             <div className="arbeidslogg-box">
-                <section className="arbeidslogg-section">
-                    {loggData?.map((loggRad) => (
-                    <Log loggRad={loggRad} key={loggRad._id}/>
-                    ))}
-                </section>
+              <section className="arbeidslogg-section">
+                {logs.map((loggRad) => (
+                  <Log loggRad={loggRad} key={loggRad._id} loggData={logs} />
+                ))}
+              </section>
             </div>
         </>)
 }

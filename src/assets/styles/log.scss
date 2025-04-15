@@ -1,0 +1,28 @@
+@import "global.scss";
+
+section{
+    article{
+        display:flex;
+        justify-content: space-evenly;
+        margin: 0.5rem;
+        background-color: $sand;
+
+        span{
+            padding: 0 0.5rem;
+            text-align: left;
+            color: $dark-blue;
+        }
+        #loggdato{
+            min-width: 100px;
+        }
+        #loggperson{
+            min-width:150px;
+        }
+        #loggbeskrivelse{
+            min-width: 400px;
+        }
+        #loggtid{
+            min-width: 100px;
+        }
+    }
+}
