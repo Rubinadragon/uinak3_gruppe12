@@ -1,0 +1,22 @@
+@use "global";
+
+main {
+
+    > section {
+        padding-top: global.$pad-top;
+
+        > h2 {
+            width: 100%;
+            font-size: 2rem;
+        }
+    }
+
+    section:last-child {
+        padding-bottom: global.$pad-bottom;
+    }
+
+}
+
+.profiler {
+    @include global.flex-display(row, wrap, flex-start, flex-start, 1.5rem); 
+}

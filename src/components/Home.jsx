@@ -6,15 +6,12 @@ import "../Logg.scss";
 export default function Home({logs, persons}){
     return (
             <>            
-            <h2>
-                Gruppemedlemmer
-            </h2>
-            <div className="profilkort">
+            <section className="profiler">
+                <h2>Gruppemedlemmer</h2>
                 {persons?.map((person) => (
                 <ProfilKort key={person._id} person={person} />
                 ))}
-            </div>
-
+            </section>
             <h2>
                 Arbeidslogg
             </h2>

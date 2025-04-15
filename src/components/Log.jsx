@@ -1,5 +1,6 @@
 import "../Logg.scss";
 
+
 export default function Log({ loggRad }) {
   return (
     <article className="article_logg">
