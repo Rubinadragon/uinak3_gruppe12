@@ -41,6 +41,13 @@ header{
         }
     }
 }
+a.active{
+   color: global.$dark-blue;
+   background-color: global.$blue-green;//$green-ish;//$blue-green;//$sand; 
+   border-width: 2px;
+   border-color: global.$dark-green-blue;
+   border-style: solid;
+}
 }
 
 
