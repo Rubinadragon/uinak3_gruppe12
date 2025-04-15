@@ -27,6 +27,12 @@
         height: 300px;
         object-fit: cover;
     }
+
+    transition: .25s;
+    &:hover {
+        transform: translateY(-5px);
+        background-color: global.$green-ish; 
+    }
 }
 
 @media only screen and (max-width: 980px){
