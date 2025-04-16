@@ -38,21 +38,27 @@ export default function Profil(){
             )
         }
 
-        {
-            singleLogg?.map((loggRad) => (
-                <article key={loggRad._id}>
-                    <span>{loggRad.loggdato}</span>
-                    {
-                        loggRad.loggpersoner.map((loggPerson, index) => (
-                            <span key={`person_${index}`}>{loggPerson.personnavn}
-                            {loggRad.loggpersoner.length > index + 1 ? ", " : ""}</span>
-                        ))
-                    }
-                    <span>{loggRad.loggbeskrivelse}</span>
-                    <span>{loggRad.loggtimer}</span>
-                </article>
-            ))
-        }
+        <div className="arbeidslogg-box">
+            <section className="arbeidslogg-section">
+                {
+                    singleLogg?.map((loggRad) => (                
+                        <article key={loggRad._id} className="article_logg">
+                            <span>{loggRad.loggdato}</span>
+                            <span className="loggpersoner-wrapper">
+                            {
+                                loggRad.loggpersoner.map((loggPerson, index) => (
+                                    <span key={`person_${index}`}>{loggPerson.personnavn}
+                                    {loggRad.loggpersoner.length > index + 1 ? ", " : ""}</span>
+                                ))
+                            }
+                            </span>
+                            <span>{loggRad.loggbeskrivelse}</span>
+                            <span>{loggRad.loggtimer}</span>
+                        </article>                
+                    ))
+                }
+            </section>
+        </div>
         </>
     );
 }
