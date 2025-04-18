@@ -1,0 +1,64 @@
+.arbeidslogg-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }  
+
+
+  .article_logg {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+    background-color: #111;
+  
+    &:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+  
+    span {
+      color: #fff;
+      font-size: 0.95rem;
+  
+      &:nth-child(1) {
+        flex-basis: 120px;  //Dato
+        flex-shrink: 0;
+      }
+  
+      &:nth-child(2) {  //Navn
+        flex-basis: 250px;
+        flex-shrink: 0;
+        text-align: left;
+      
+        .loggpersoner-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          color: #fff;
+        }
+      }
+  
+      &:nth-child(3) {
+        flex-grow: 1;       //Beskrivelse
+        white-space: normal;
+        text-align: left;
+      }
+  
+      &:nth-child(4) {
+        flex-basis: 50px;   //Timer
+        text-align: right;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .arbeidslogg-box {
+    max-height: 500px; 
+    overflow-y: auto;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;    
+    scroll-behavior: smooth;   
+  }
