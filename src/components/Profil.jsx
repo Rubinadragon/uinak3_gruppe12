@@ -1,4 +1,5 @@
 import "../assets/styles/profile.scss";
+import "../assets/styles/Logg.scss";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -45,8 +46,8 @@ export default function Profil() {
         </section>
       )}
 
-      <section id="logSection" className="arbeidslogg-box">
-        <h2>Arbeidslogg</h2>
+    <h2 className="arbeidslogg-title">Arbeidslogg</h2>
+      <section id="logSection" className="arbeidslogg-box">        
         <section className="arbeidslogg-section">
           {person?.personlogg.map((loggRad) => {
             hoursWorked += loggRad.loggtimer;

@@ -1,4 +1,4 @@
-import "../Logg.scss";
+import "../assets/styles/Logg.scss";
 
 export default function Log({ loggRad }) {
   return (
