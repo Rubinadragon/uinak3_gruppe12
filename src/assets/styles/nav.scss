@@ -1,0 +1,95 @@
+@use "global";
+
+header{
+    background-color: global.$green-ish;//$dark-green-blue;
+
+    section {
+        @include global.content-width(2rem, 2rem, 1380px);
+        //@include global.flex-display(row, nowrap, space-between, center);
+
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    a{
+        font-weight: global.$Bold;
+    }  
+    .logo{
+        font-size: 3rem;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center; 
+        color: global.$dark-blue;
+        text-decoration: none;
+        font-weight: global.$Black;
+        padding: inherit;
+    }
+    ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 1rem;
+    li{
+        list-style: none;
+        padding: 1rem;
+
+        a{  
+            color: global.$sand;
+            background-color: global.$dark-blue;
+            padding: inherit;
+            border-radius: 0.5rem;
+        }
+    }
+}
+a.active{
+   color: global.$dark-blue;
+   background-color: global.$blue-green;//$green-ish;//$blue-green;//$sand; 
+   border-width: 2px;
+   border-color: global.$dark-green-blue;
+   border-style: solid;
+}
+}
+
+
+//Mobil
+@media only screen and (max-width: 650px){
+    header{
+        text-align: left;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        section{
+            @include global.flex-display(row, wrap, space-between, center);
+        }
+        nav{
+            min-width: 100%;
+        }
+        ul{
+            min-width: inherit;
+            text-align: left;
+            flex-direction: row;
+        }
+    }
+}
+
+
+//PC
+@media only screen and (min-width: 651px){ 
+    header{
+        section{
+            @include global.flex-display(row, nowrap, space-between, center);
+        }
+        li{
+            a:hover{
+                background-color: global.$blue-green;
+            }
+        }
+        ul{
+            flex-direction: row;
+            align-items: center;
+        }
+        a:hover{
+            color: global.$dark-blue;
+        }
+    }
+}

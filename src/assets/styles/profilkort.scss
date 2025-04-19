@@ -1,0 +1,42 @@
+@use "global";
+
+
+.profilkort{
+    flex-grow: 1;
+    flex-basis: 23%;
+}
+.profilkort article {
+    @include global.flex-display(column-reverse);
+
+    background-color: global.$sand;
+    color: global.$dark-blue;
+    padding: 1rem;
+
+    a{
+        margin:0;
+    }
+
+    p{
+        margin:0.5rem 0 0 0;
+        text-decoration: none;
+    }
+
+
+    img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    transition: .25s;
+    &:hover {
+        transform: translateY(-5px);
+        background-color: global.$green-ish; 
+    }
+}
+
+@media only screen and (max-width: 980px){
+    .profilkort{
+        flex-basis: 45%;
+    }
+}

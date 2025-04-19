@@ -1,0 +1,33 @@
+@use "global";
+
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: global.$Jost;
+    background-color: global.$white;
+}
+
+h1, h2, p {
+    color: global.$dark-blue;
+}
+
+p {
+    line-height: 1.5;
+    font-size: global.$text-m;
+}
+
+section {
+    margin: 0 auto;
+    @include global.content-width();
+}

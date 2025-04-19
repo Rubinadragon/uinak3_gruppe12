@@ -1,16 +1,16 @@
-@import "global.scss";
+@use "global";
 
 section{
-    article{
+    #logRow{
         display:flex;
         justify-content: space-evenly;
         margin: 0.5rem;
-        background-color: $sand;
+        background-color: global.$sand;
 
         span{
             padding: 0 0.5rem;
             text-align: left;
-            color: $dark-blue;
+            color: global.$dark-blue;
         }
         #loggdato{
             min-width: 100px;

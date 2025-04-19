@@ -26,9 +26,18 @@ export async function fetchPerson(personSlug) {
         epost,
         bio,
         interesser,
-        "personslug": personslug.current
-        }`,
-        {personSlug}
+        "personslug": personslug.current,
+        "personlogg": *[_type=='logg' && references(^._id)]{
+          _id,
+          _createdAt,
+          loggdato,
+          loggpersoner[]-> {
+            personnavn
+          },
+          loggbeskrivelse,
+          loggtimer,
+        } | order(loggdato asc, _createdAt asc)
+    }`, {personSlug}
     );
     return data[0];
 }
