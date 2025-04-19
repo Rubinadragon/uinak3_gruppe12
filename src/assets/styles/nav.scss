@@ -4,50 +4,50 @@ header{
     background-color: global.$green-ish;//$dark-green-blue;
 
     section {
-        @include global.content-width(2rem, 2rem, 1380px);
-        //@include global.flex-display(row, nowrap, space-between, center);
+        @include global.content-width();
 
         padding-top: 1rem;
         padding-bottom: 1rem;
+        text-align: center;
     }
 
     a{
         font-weight: global.$Bold;
-        text-align: center;
     }  
+
     .logo{
+        display: block;
         font-size: 3rem;
-        padding: 0 1rem;
-        display: flex;
-        align-items: center; 
         color: global.$dark-blue;
         text-decoration: none;
         font-weight: global.$Black;
         padding: inherit;
     }
+
     ul{
         @include global.flex-display(row, wrap, flex-start, center, 1rem);
-    padding: 0;
-    li{
-        list-style: none;
-        padding: 1rem;
+        padding: 0;
 
-        a{  
-            color: global.$sand;
-            background-color: global.$dark-blue;
-            padding: inherit;
-            border-radius: 0.5rem;
-            transition: .25s;
+        li{
+            list-style: none;
+            padding: 1rem;
+
+            a{  
+                color: global.$sand;
+                background-color: global.$dark-blue;
+                padding: inherit;
+                border-radius: 0.5rem;
+                transition: .25s;
+            }
         }
     }
-}
-a.active{
-   color: global.$dark-blue;
-   background-color: global.$blue-green;//$green-ish;//$blue-green;//$sand; 
-   border-width: 2px;
-   border-color: global.$dark-green-blue;
-   border-style: solid;
-}
+    a.active{
+        color: global.$dark-blue;
+        background-color: global.$blue-green;//$green-ish;//$blue-green;//$sand; 
+        border-width: 2px;
+        border-color: global.$dark-green-blue;
+        border-style: solid;
+    }
 }
 
 
@@ -59,8 +59,12 @@ a.active{
         }
        
         ul{
-        text-align: center;
-        flex-direction: column;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .logo {
+            margin-bottom: 1rem;
         }
     }
 }
