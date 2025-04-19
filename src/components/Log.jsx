@@ -13,7 +13,6 @@ export default function Log({ loggRad }) {
           </span>
         ))}
       </span>
-
       <span>{loggRad.loggbeskrivelse}</span>
       <span>{`${loggRad.loggtimer} ${loggRad.loggtimer >= 2 ? "timer" : "time"}`}</span>
     </article>
