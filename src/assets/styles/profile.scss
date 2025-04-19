@@ -36,7 +36,7 @@
 }
 
 #logSection {
-    @include global.content-width();
+    //@include global.content-width();
 
     padding-bottom: global.$pad-bottom;
 }

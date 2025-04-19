@@ -1,27 +1,33 @@
-@import "./_global.scss";
+@use "global";
+
 .arbeidslogg-box,
 .arbeidslogg-section,
 .article_logg {
-  font-family: $Jost;
+  font-family: global.$Jost;
+}
+
+.arbeidslogg-box {
+  @include global.content-width();
+  @include global.flex-display(column, wrap, flex-start, flex-start, 2rem); 
 }
 
 
 .arbeidslogg-section {
-    max-width: 100%;
-    margin: auto;
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 0.5rem;    
+    width: 100%;
+    overflow-x: auto;
+    padding: 1.5rem;       
+    background-color: global.$blue-green;
+    border-radius: 8px;    
+    scroll-behavior: smooth;
   }  
 
 
   .article_logg {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    @include global.flex-display(row, nowrap, flex-start, flex-start, 1rem);
+    min-width: 900px;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid #333;
-    background-color: $dark-green-blue;
+    background-color: global.$dark-green-blue;
     
     &:first-child {
       border-top-left-radius: 8px;
@@ -35,11 +41,11 @@
 
   
     &:nth-child(even) {
-      background-color: $dark-blue;
+      background-color: global.$dark-blue;
     }
   
     span {
-      color: $sand;
+      color: global.$sand;
       font-size: 0.95rem;
   
       &:nth-child(1) {
@@ -56,7 +62,7 @@
           display: flex;
           flex-direction: column;
           gap: 0.25rem;
-          color: $sand;
+          color: global.$sand;
         }
       }
   
@@ -72,22 +78,4 @@
         flex-shrink: 0;
       }
     }
-  }
-
-  .arbeidslogg-box {
-    max-width: 1200px;    
-    overflow-y: auto;
-    background-color: $blue-green;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;    
-    scroll-behavior: smooth;
-    margin-bottom: 4rem;
-  }
-
-  h2.arbeidslogg-title {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
   }

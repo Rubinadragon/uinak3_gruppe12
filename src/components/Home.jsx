@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ProfilKort from "./ProfilKort";
 import Log from "./Log";
 import "../assets/styles/Logg.scss";
@@ -13,8 +12,8 @@ export default function Home({ logs, persons }) {
         ))}
       </section>
       
-      <h2 className="arbeidslogg-title">Arbeidslogg</h2>
       <section className="arbeidslogg-box">        
+        <h2>Arbeidslogg</h2>
         <section className="arbeidslogg-section">
           {logs?.map((loggRad) => (
             <Log loggRad={loggRad} key={loggRad._id} loggData={logs} />
