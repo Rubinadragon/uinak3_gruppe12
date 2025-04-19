@@ -47,7 +47,7 @@ export default function Profil() {
       )}
 
       <section id="logSection" className="arbeidslogg-box">
-      <h2 className="arbeidslogg-title">Arbeidslogg</h2>     
+      <h2>Arbeidslogg</h2>     
         <section className="arbeidslogg-section">
           {person?.personlogg.map((loggRad) => {
             hoursWorked += loggRad.loggtimer;
