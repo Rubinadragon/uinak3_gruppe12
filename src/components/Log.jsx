@@ -1,5 +1,4 @@
-import "../Logg.scss";
-
+import "../assets/styles/Logg.scss";
 
 export default function Log({ loggRad }) {
   return (
@@ -14,9 +13,8 @@ export default function Log({ loggRad }) {
           </span>
         ))}
       </span>
-
       <span>{loggRad.loggbeskrivelse}</span>
-      <span>{loggRad.loggtimer}</span>
+      <span>{`${loggRad.loggtimer} ${loggRad.loggtimer >= 2 ? "timer" : "time"}`}</span>
     </article>
   );
 }

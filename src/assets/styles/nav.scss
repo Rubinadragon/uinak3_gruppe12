@@ -13,6 +13,7 @@ header{
 
     a{
         font-weight: global.$Bold;
+        text-align: center;
     }  
     .logo{
         font-size: 3rem;
@@ -25,10 +26,8 @@ header{
         padding: inherit;
     }
     ul{
-    display: flex;
-    flex-wrap: wrap;
+        @include global.flex-display(row, wrap, flex-start, center, 1rem);
     padding: 0;
-    gap: 1rem;
     li{
         list-style: none;
         padding: 1rem;
@@ -38,6 +37,7 @@ header{
             background-color: global.$dark-blue;
             padding: inherit;
             border-radius: 0.5rem;
+            transition: .25s;
         }
     }
 }
@@ -54,20 +54,13 @@ a.active{
 //Mobil
 @media only screen and (max-width: 650px){
     header{
-        text-align: left;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        section{
-            @include global.flex-display(row, wrap, space-between, center);
+        section {
+            flex-direction: column;
         }
-        nav{
-            min-width: 100%;
-        }
+       
         ul{
-            min-width: inherit;
-            text-align: left;
-            flex-direction: row;
+        text-align: center;
+        flex-direction: column;
         }
     }
 }
@@ -83,10 +76,6 @@ a.active{
             a:hover{
                 background-color: global.$blue-green;
             }
-        }
-        ul{
-            flex-direction: row;
-            align-items: center;
         }
         a:hover{
             color: global.$dark-blue;

@@ -1,0 +1,81 @@
+@use "global";
+
+.arbeidslogg-box,
+.arbeidslogg-section,
+.article_logg {
+  font-family: global.$Jost;
+}
+
+.arbeidslogg-box {
+  @include global.content-width();
+  @include global.flex-display(column, wrap, flex-start, flex-start, 2rem); 
+}
+
+
+.arbeidslogg-section {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1.5rem;       
+    background-color: global.$blue-green;
+    border-radius: 8px;    
+    scroll-behavior: smooth;
+  }  
+
+
+  .article_logg {
+    @include global.flex-display(row, nowrap, flex-start, flex-start, 1rem);
+    min-width: 900px;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+    background-color: global.$dark-green-blue;
+    
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    
+    &:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+  
+    &:nth-child(even) {
+      background-color: global.$dark-blue;
+    }
+  
+    span {
+      color: global.$sand;
+      font-size: 0.95rem;
+  
+      &:nth-child(1) {
+        flex-basis: 120px;  //Dato
+        flex-shrink: 0;
+      }
+  
+      &:nth-child(2) {  //Navn
+        flex-basis: 250px;
+        flex-shrink: 0;
+        text-align: left;
+      
+        .loggpersoner-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          color: global.$sand;
+        }
+      }
+  
+      &:nth-child(3) {
+        flex-grow: 1;       //Beskrivelse
+        white-space: normal;
+        text-align: left;
+      }
+  
+      &:nth-child(4) {
+        flex-basis: 50px;   //Timer
+        text-align: right;
+        flex-shrink: 0;
+      }
+    }
+  }
