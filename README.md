@@ -1,12 +1,29 @@
-# React + Vite
+# Arbeidskrav 3: Gruppehjemmeside
+Arbeidskrav 3 i faget utvikling av interaktive nettsteder ved Høgskolen i Østfold, våren 2025. Dynamisk gruppehjemmeside og logg i Sanity og React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+gruppenummer: **12**
 
-Currently, two official plugins are available:
+Gruppemedlemmer:
+- Cecilie Sellevold Vegstein
+- Julie Andersen
+- Robert Johannessen
+- Kjell-Magne Larsen
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Installasjon
+### Forhåndskrav
+- NodeJs
 
-## Expanding the ESLint configuration
+### Installere React
+1. Åpne terminal og naviger til rot av prosjektmappen.
+2. Skriv `npm install`.
+3. Skriv `npm run dev` for å starte lokalserver.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Følgende dependencies blir installert:
+- SASS
+- React router
+
+### Installere Sanity
+1. Åpne terminal og naviger til mappen uinak3g12backend.
+2. Skriv `npm install`.
+3. Skriv `npm run dev` for å starte Sanity lokalserver.
